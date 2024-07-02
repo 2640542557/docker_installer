@@ -28,15 +28,14 @@ jobs:
          ls
 
     - name: Connect
-      id: connect
-      uses: danhendrickson/sftp-transfer-action@v1.23
+      uses: Dylan700/sftp-upload-action@latest
       with:
         server: ${{ secrets.AB_DEV_SERVER }}
-        user: ${{ secrets.AB_DEV_SERVER_USER }}
-        pass: ${{ secrets.AB_DEV_SERVER_PASS }}
+        username: ${{ secrets.AB_DEV_SERVER_USER }}
+        password: ${{ secrets.AB_DEV_SERVER_PASS }}
         port: ${{ secrets.AB_DEV_SERVER_PORT }}
-        local-path: './linux.sh'
-        remote-path: '/upload/'
+        uploads: |
+          ./linux.sh => ./upload/
 
     - name: sftp文件上传状态
       run: echo "Transfer Status - ${{ steps.connect.outputs.transferStatus }}"
