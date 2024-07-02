@@ -35,7 +35,7 @@ jobs:
         password: ${{ secrets.AB_DEV_SERVER_PASS }}
         port: ${{ secrets.AB_DEV_SERVER_PORT }}
         uploads: |
-          /linux.sh => /upload/
+          linux.sh => /upload/
       
     - name: Release
       uses: softprops/action-gh-release@v2
