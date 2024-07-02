@@ -36,9 +36,6 @@ jobs:
         port: ${{ secrets.AB_DEV_SERVER_PORT }}
         uploads: |
           ./linux.sh => ./upload/
-
-    - name: sftp文件上传状态
-      run: echo "Transfer Status - ${{ steps.connect.outputs.transferStatus }}"
       
     - name: Release
       uses: softprops/action-gh-release@v2
