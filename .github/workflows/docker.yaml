@@ -3,7 +3,7 @@ name: Docker Installer Download
 on:
   workflow_dispatch:
   schedule:
-    - cron: '00 23 * * *'
+    - cron: '10 15 * * *' # 使用的是UCT时间，比北京时间晚了8小时
 
 permissions:
   contents: write
